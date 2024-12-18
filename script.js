@@ -37,8 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
             let w = (100 * 5.16) + (z * 11.09) + 128 + (value * 1.17);
             result = w; 
             unit.textContent = value;
-        electricity.textContent = (100 * 5.16).toFixed(2);
-        distribution.textContent = (value * 1.17).toFixed(2);
+        electricity.textContent = `₹${(100 * 5.16).toFixed(2)}`;
+        distribution.textContent = `₹${(value * 1.17).toFixed(2)}`;
         total.textContent = `₹${result.toFixed(2)}`;
   
         } if(value>300) {
