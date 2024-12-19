@@ -29,11 +29,15 @@ document.addEventListener('DOMContentLoaded', function () {
         let result;
 
         if (value >= 1 && value <= 100) {
-            result = value * 4.71;
-            unit.textContent = value;
-            electricity.textContent = `₹${(value * 4.71).toFixed(2)}`;
-            distribution.textContent = `₹${(value * 1.17).toFixed(2)}`;
-            total.textContent = `₹${result.toFixed(2)}`;
+    let electricityCost = value * 4.71;  // Cost for electricity
+    let distributionCost = value * 1.17; // Cost for distribution
+    result = electricityCost + distributionCost; // Add both costs
+
+    unit.textContent = value;
+    electricity.textContent = `₹${electricityCost.toFixed(2)}`;
+    distribution.textContent = `₹${distributionCost.toFixed(2)}`;
+    total.textContent = `₹${result.toFixed(2)}`;
+        }
         } else if (value >= 101 && value <= 300) {
             let z = value - 100;  // Subtract 100 from the value
             let w = (100 * 5.16) + (z * 11.09) + 128 + (value * 1.17);
