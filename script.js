@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Input validation
         if (isNaN(value) || value <= 0) {  // Check for invalid input or zero
             unit.textContent = "NaN";
-            electricity.textContent = "NaN";
+            electricity.textContent = "No";
             distribution.textContent = "NaN";
             total.textContent = "NaN";
             resultOutput.textContent = " Invalid";
