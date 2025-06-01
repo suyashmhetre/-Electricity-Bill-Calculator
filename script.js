@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
         let result;
         
         if (value >= 1 && value <= 100) {
-            result = value * 4.71;
+            result = value * 4.71 + (100 * 5.16).toFixed(2) + (value * 1.17).toFixed(2);
             unit.textContent = value;
         electricity.textContent = (100 * 5.16).toFixed(2);
         distribution.textContent = (value * 1.17).toFixed(2);
