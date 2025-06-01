@@ -31,11 +31,16 @@ document.addEventListener('DOMContentLoaded', function () {
         let result;
         
         if (value >= 1 && value <= 100) {
-            result = value * 4.71 + (100 * 5.16).toFixed(2) + (value * 1.17).toFixed(2);
-            unit.textContent = value;
-        electricity.textContent = (100 * 5.16).toFixed(2);
-        distribution.textContent = (value * 1.17).toFixed(2);
-        total.textContent = `₹${result.toFixed(2)}`;
+    let electricityCharge = value * 5.16;
+    let distributionCharge = value * 1.17;
+    let baseRate = value * 4.71;
+    let result = electricityCharge + distributionCharge + baseRate;
+
+    unit.textContent = value;
+    electricity.textContent = electricityCharge.toFixed(2);
+    distribution.textContent = distributionCharge.toFixed(2);
+    total.textContent = `₹ ${result.toFixed(2)}`;
+        }
         } else if (value >= 101 && value <= 300) {
             let z = value - 100;  // Subtract 100 from the value
             let w = (100 * 5.16) + (z * 11.09) + 128 + (value * 1.17);
